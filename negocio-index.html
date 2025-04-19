@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Negocios - El Faro</title>
+  <link rel="icon" href="img/icono el faro.ico">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero {
+      background-color: #007bff;
+      color: white;
+      padding: 60px 0;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: left;
+      background-color: white;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    tr:hover td {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    footer {
+      background-color: #c9d2d0;
+      color: #31231e;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .nav-link {
+      color: #007bff;
+    }
+
+    .nav-link:hover {
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="img/icono el faro.png" alt="Logotipo El Faro" title="Logotipo El Faro" width="200" />
+    <div id="reloj" class="fw-bold mt-3"></div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero text-center">
+    <h1>Negocios - El Faro</h1>
+    <p>Las últimas noticias del mundo de los negocios</p>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="deportes-index.html">Deportes</a></li>
+        <li class="nav-item"><a class="nav-link" href="negocio-index.html">Negocios</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Section: Agregar Artículo -->
+  <section class="container mt-5">
+    <h2>Agregar nuevo artículo</h2>
+    <div class="mb-3">
+      <input type="text" id="titulo" class="form-control" placeholder="Título del artículo">
+    </div>
+    <div class="mb-3">
+      <textarea id="texto" class="form-control" placeholder="Texto del artículo"></textarea>
+    </div>
+    <button class="btn btn-success" onclick="agregarArticulo()">Agregar</button>
+  </section>
+
+  <!-- Artículos Recientes -->
+  <section class="container mt-5">
+    <h2 class="text-center">Artículos Recientes</h2>
+    <div class="row">
+      <!-- Artículo 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/negocio-1.jpg" class="card-img-top" alt="Articulo 1">
+          <div class="card-body">
+            <h5 class="card-title">Cómo la red social Reddit logró alcanzar un valor de US$9.000 millones</h5>
+            <p class="card-text">Reddit tuvo un debut exitoso en la bolsa de valores de Nueva York. Los 22 millones de acciones subieron un 48% en las primeras horas de cotización.</p>
+            <a href="negocio-1.html" class="btn btn-primary">Leer más</a>
+          </div>
+        </div>
+      </div>
+      <!-- Artículo 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/negocio-2.jpg" class="card-img-top" alt="Articulo 2">
+          <div class="card-body">
+            <h5 class="card-title">Los éxitos de Adam Sandler en Netflix lo convierten en el actor mejor pagado</h5>
+            <p class="card-text">Adam Sandler lideró la lista de actores mejor pagados de Hollywood gracias al éxito de sus producciones en Netflix.</p>
+            <a href="negocio-2.html" class="btn btn-primary">Leer más</a>
+          </div>
+        </div>
+      </div>
+      <!-- Artículo 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/negocio-3.jpg" class="card-img-top" alt="Articulo 3">
+          <div class="card-body">
+            <h5 class="card-title">"Es como Amazon con esteroides": cómo funciona Temu</h5>
+            <p class="card-text">Temu, el gigante chino, está revolucionando las compras online con precios bajos y una enorme variedad de productos.</p>
+            <a href="negocio-3.html" class="btn btn-primary">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de contacto -->
+  <section class="container mt-5">
+    <h2>Formulario de contacto</h2>
+    <div class="mb-3">
+      <input type="text" id="nombreContacto" class="form-control" placeholder="Tu nombre">
+    </div>
+    <div class="mb-3">
+      <textarea id="mensajeContacto" class="form-control" placeholder="Tu mensaje"></textarea>
+    </div>
+    <button class="btn btn-success" onclick="enviarContacto()">Enviar</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <p>&copy; 2024 Noticias El Faro. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Bootstrap JS & Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <script>
+    function actualizarHora() {
+      const ahora = new Date();
+      const opciones = {
+        weekday: 'long', year: 'numeric', month: 'long',
+        day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+      };
+      document.getElementById('reloj').innerText = ahora.toLocaleString('es-ES', opciones);
+    }
+    setInterval(actualizarHora, 1000);
+    actualizarHora();
+
+    function agregarArticulo() {
+      const titulo = document.getElementById('titulo').value;
+      const texto = document.getElementById('texto').value;
+      if (!titulo || !texto) {
+        alert("Por favor completa ambos campos.");
+        return;
+      }
+
+      alert(`Artículo "${titulo}" agregado.`);
+      document.getElementById('titulo').value = '';
+      document.getElementById('texto').value = '';
+    }
+
+    function enviarContacto() {
+      const nombre = document.getElementById('nombreContacto').value;
+      const mensaje = document.getElementById('mensajeContacto').value;
+      if (!nombre || !mensaje) {
+        alert("Por favor completa el formulario.");
+        return;
+      }
+      alert(`Gracias, ${nombre}. Tu mensaje fue enviado.`);
+      document.getElementById('nombreContacto').value = '';
+      document.getElementById('mensajeContacto').value = '';
+    }
+  </script>
+</body>
+</html>
+

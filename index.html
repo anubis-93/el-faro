@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>El Faro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="img/icono el faro.icon">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .top-alert {
+            background-color: #ffc107;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .article-card {
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-alert">
+    ¡Este es un aviso importante para todos los lectores!
+</div>
+
+<header class="bg-light p-4 mb-4 text-center">
+    <img src="img/icono el faro.png" alt="logotipo el faro" title="logotipo icono_el_faro" width="200"/>
+    <h1>Noticias - El Faro</h1>
+    <div id="clock"></div>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">El Faro</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html" target="_blank">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="deportes-index.html" target="_blank">Deportes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="negocios-index.html" target="_blank">Negocios</a>
+        </li>
+        <li>
+          <a class="nav-link" href="noticias-index.html" target="_blank">noticias</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="mb-4">
+        <div id="articleCounter" class="fw-bold">Cantidad de artículos: 3 </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Como es la "enfermedad carívora" que remece a Japón</h2>
+                    <p class="card-subtitle mb-2 text-muted">Salud</p>
+                    <p>En alerta y expectantes se encuentran las autoridades sanitarias en Japón... <a href="noticia-1.html">Clic aquí</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card article-card">
+                <div class="card-body">
+                    <h5 class="card-title">Triple homicidio en Río Bueno</h5>
+                    <p class="card-subtitle mb-2 text-muted">Crimen</p>
+                    <p>Presentando papeles médicos, el defensor pidió suspender el procedimiento... <a href="noticia-2.html">Clic aquí</a></p>
+                </div>
+            </div>
+            <div class="card article-card">
+                <div class="card-body">
+                    <h5 class="card-title">El cambio de hora se acerca</h5>
+                    <p class="card-subtitle mb-2 text-muted">Cambio de hora</p>
+                    <p>El cambio de hora en Chile se llevará a cabo el 5 de abril de 2025... <a href="noticia-3.html">Clic aquí</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="mt-5">Agregar nuevo artículo</h3>
+    <form id="articleForm">
+        <div class="mb-3">
+            <input type="text" id="articleTitle" placeholder="Título del artículo" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <textarea id="articleContent" placeholder="Contenido del artículo" rows="4" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar artículo</button>
+    </form>
+
+    <h3 class="mt-5">Contacto</h3>
+    <form id="contactForm">
+        <div class="mb-3">
+            <input type="text" placeholder="Nombre" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <textarea placeholder="Mensaje" rows="4" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary">Enviar</button>
+    </form>
+</div>
+
+<footer class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Sobre El Faro</h5>
+                <p>Medio de comunicación independiente con el objetivo de informar con veracidad.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Enlaces útiles</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Síguenos</h5>
+                <p>Redes sociales aquí</p>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        &copy; 2025 El Faro. Todos los derechos reservados.
+    </div>
+</footer>
+
+<script>
+    function updateClock() {
+        const clock = document.getElementById('clock');
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = now.toLocaleDateString('es-ES', options);
+        const timeString = now.toLocaleTimeString('es-ES');
+        clock.textContent = `${dateString} - ${timeString}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    const articleForm = document.getElementById('articleForm');
+    const articleCounter = document.getElementById('articleCounter');
+
+    function updateArticleCount() {
+        const count = document.querySelectorAll('article, .article-card').length;
+        articleCounter.textContent = `Cantidad de artículos: ${count}`;
+    }
+
+    articleForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const title = document.getElementById('articleTitle').value.trim();
+        const content = document.getElementById('articleContent').value.trim();
+
+        if (title && content) {
+            const newArticle = document.createElement('div');
+            newArticle.classList.add('card', 'article-card');
+            newArticle.innerHTML = `
+                <div class="card-body">
+                    <h5 class="card-title">${title}</h5>
+                    <p>${content}</p>
+                </div>
+            `;
+            document.querySelector('.col-md-4').appendChild(newArticle);
+            updateArticleCount();
+            articleForm.reset();
+        }
+    });
+
+    updateArticleCount();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
